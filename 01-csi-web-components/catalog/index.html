@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="http://localhost:4000/user-welcome.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://localhost:4001/buy-button.css"
+      type="text/css"
+    />
+    <style>
+      .container {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .items {
+        background-color: hsl(120, 46%, 86%);
+        width: 90%;
+      }
+
+      .items ul {
+        padding: 0;
+        list-style-type: none;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      .items ul li {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="items">
+        <ul>
+          <li>
+            <span>Super Mario Bros</span>
+            <span>The platform game for all the family</span>
+            <lc-buy-button id="button-mario" text="Available"></lc-buy-button>
+          </li>
+          <li>
+            <span>Sonic</span>
+            <span>The evolution of the platform games</span>
+            <lc-buy-button id="button-sonic" text="Available"></lc-buy-button>
+          </li>
+          <li>
+            <span>Metroid</span>
+            <span>You are los in space, and you have to find the gateway</span>
+            <lc-buy-button id="button-metroid" text="Available"></lc-buy-button>
+          </li>
+        </ul>
+      </div>
+      <div class="welcome">
+        <lc-user-welcome name="Jaime"></lc-user-welcome>
+      </div>
+    </div>
+    <script src="http://localhost:4000/user-welcome.js"></script>
+    <script src="http://localhost:4001/buy-button.js"></script>
+    <script>
+      document
+        .getElementById("button-mario")
+        .addEventListener("retrieve", (evt) => {
+          evt.stopPropagation();
+          console.log(evt);
+        });
+      document
+        .getElementById("button-sonic")
+        .addEventListener("retrieve", (evt) => {
+          evt.stopPropagation();
+          console.log(evt);
+        });
+      document
+        .getElementById("button-metroid")
+        .addEventListener("retrieve", (evt) => {
+          evt.stopPropagation();
+          console.log(evt);
+        });
+    </script>
+  </body>
+</html>
